@@ -1,0 +1,26 @@
+name: auto-test
+permissions:
+  contents: read
+
+on: push
+
+jobs:
+  auto-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - name: install dependency
+        run: npm install
+      - name: test format
+        run: npm run format
+      - name: test linter
+        run: npm run lint
+      - name: test compiler
+        run: npm run tsc
