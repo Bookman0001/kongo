@@ -23,7 +23,7 @@
     "@types/node": "22.16.5",
     "dotenv": "17.2.0",
     "eslint": "9.31.0",
-    "eslint-plugin-n": "14.0.0",
+    "eslint-plugin-n": "17.21.0",
     "prettier": "3.6.2",
     "tsx": "4.20.3",
     "typescript": "5.8.3",
