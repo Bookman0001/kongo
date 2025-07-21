@@ -1,6 +1,6 @@
 import js from '@eslint/js'
 import tseslint from 'typescript-eslint'
-import node from 'eslint-plugin-node'
+import n from 'eslint-plugin-n'
 
 export default [
   js.configs.recommended,
@@ -15,7 +15,7 @@ export default [
       },
     },
     plugins: {
-      node,
+      n,
     },
     rules: {
       '@typescript-eslint/no-explicit-any': 'warn',
