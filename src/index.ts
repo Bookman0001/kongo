@@ -1,10 +1,10 @@
-import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 import { validator } from 'hono/validator'
+import { serve } from '@hono/node-server'
 
-import { validateSchema } from './validators/index.js'
-import { getLocation } from './callings/getLocation.js'
+import { validateSchema } from './validators/chat/weather/index.js'
+import { getLocation } from './callings/location/getLocation.js'
 
 const app = new Hono({ strict: true })
 
@@ -26,14 +26,14 @@ app.post(
   }),
   async (c) => {
     const { userMessage } = c.req.valid('json')
-    const location = await getLocation({ userMessage })
-    if (location?.object) {
-      const { latitude, longitude } = location.object
-      console.log(latitude, longitude)
-      // TO DO: create the fetching function for weather
-      return c.text('fetched', 200)
+    const result = await getLocation({ userMessage })
+    if (result.status === 'error') {
+      return c.text(result.errorMessage, 500)
     }
-    return c.text('LLM failed to create location info', 500)
+    const { latitude, longitude } = result.locationInfo
+    // TO DO: create the fetching function for weather
+    console.log(latitude, longitude)
+    return c.text('fetched', 200)
   }
 )
 
@@ -42,7 +42,6 @@ app.notFound((c) => {
 })
 
 app.onError((err, c) => {
-  console.error(err)
   return c.text('Oops! internal error occured!', 500)
 })
 
