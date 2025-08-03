@@ -20,6 +20,7 @@ export default [
     rules: {
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/require-await': 'off',
+      'no-unsafe-member-access': 'off',
     },
   },
 ]
