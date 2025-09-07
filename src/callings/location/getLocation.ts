@@ -12,6 +12,7 @@ export const getLocation = async ({ userMessage }: { userMessage: string }) => {
         'it should be used to get latest weather information. The latitude and longitude should be suggested.',
       schema: validationSchema,
       maxRetries: 3,
+      maxOutputTokens: 512,
     })
     return { status: 'ok' as const, locationInfo: result?.object }
   } catch (error) {
