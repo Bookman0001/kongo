@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
-    "@types/node": "24.10.13",
+    "@types/node": "24.10.14",
     "dotenv": "17.3.1",
     "eslint": "10.0.2",
     "eslint-plugin-n": "17.24.0",
