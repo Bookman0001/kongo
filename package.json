@@ -16,7 +16,7 @@
     "@hono/node-server": "2.1.4",
     "ai": "7.0.137",
     "hono": "4.13.13",
-    "zod": "4.6.5"
+    "zod": "4.6.6"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
