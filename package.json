@@ -14,7 +14,7 @@
   "dependencies": {
     "@ai-sdk/openai": "4.0.103",
     "@hono/node-server": "2.1.5",
-    "ai": "7.0.153",
+    "ai": "7.0.154",
     "hono": "4.13.14",
     "zod": "4.6.7"
   },
