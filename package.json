@@ -12,7 +12,7 @@
     "tsc": "tsc --noEmit"
   },
   "dependencies": {
-    "@ai-sdk/openai": "4.0.103",
+    "@ai-sdk/openai": "4.0.104",
     "@hono/node-server": "2.1.5",
     "ai": "7.0.154",
     "hono": "4.13.14",
